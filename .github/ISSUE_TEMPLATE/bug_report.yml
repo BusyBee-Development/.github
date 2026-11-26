@@ -1,0 +1,118 @@
+name: Bug Report
+description: Something is broken or not working as expected
+title: "[Bug]: "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a bug! The more detail you give, the faster it can be fixed.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the bug in a few sentences.
+      placeholder: "Example: Running the reload command throws an error in console."
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: What did you expect to happen?
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Exactly what to do to make it happen again.
+      placeholder: |
+        1. Start the server
+        2. Run the command ...
+        3. See the error
+    validations:
+      required: true
+
+  - type: dropdown
+    id: frequency
+    attributes:
+      label: How often does it happen?
+      options:
+        - Every time
+        - Sometimes
+        - Only happened once
+        - Not sure
+    validations:
+      required: true
+
+  - type: input
+    id: plugin-version
+    attributes:
+      label: Plugin version
+      description: Run /version followed by the plugin name. "Latest" is not a version.
+      placeholder: "Example: 1.2.3"
+    validations:
+      required: true
+
+  - type: dropdown
+    id: software
+    attributes:
+      label: Server software
+      options:
+        - Paper
+        - Folia
+        - Purpur
+        - Spigot
+        - Fabric
+        - Other (say which in the next field)
+    validations:
+      required: true
+
+  - type: input
+    id: server-version
+    attributes:
+      label: Server version
+      description: Paste the output of /version.
+    validations:
+      required: true
+
+  - type: input
+    id: java-version
+    attributes:
+      label: Java version
+      placeholder: "Example: 21"
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs and errors
+      description: Upload logs/latest.log to https://mclo.gs and paste the link. If there is no log to share, explain why.
+    validations:
+      required: true
+
+  - type: textarea
+    id: config
+    attributes:
+      label: Plugin config
+      description: Paste your config or a link to it. Remove passwords and tokens first.
+
+  - type: textarea
+    id: extra
+    attributes:
+      label: Anything else?
+      description: Other plugins installed, screenshots, videos, or a spark profile for lag problems.
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before you submit
+      options:
+        - label: I searched existing issues and this has not been reported yet
+          required: true
+        - label: I am using the newest version of the plugin
+          required: false
